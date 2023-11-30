@@ -1,16 +1,9 @@
-type DebugFn = (...args: string[]) => void;
-
 export function createDebug({
   enabled = false,
   classes = [],
   hiddenClass = "debug-panel__hidden",
   logger = console.log,
-}: {
-  enabled?: boolean;
-  classes?: string[];
-  hiddenClass?: string;
-  logger?: DebugFn;
-} = {}): DebugFn {
+} = {}) {
   if (!enabled) return logger;
 
   const debugPanel = document.createElement("div");
@@ -22,7 +15,7 @@ export function createDebug({
   };
   document.body.appendChild(debugPanel);
 
-  function debug(...args: string[]) {
+  function debug(...args) {
     logger(...args);
     debugPanel.innerHTML += `<pre class="debug-panel__message">${args.join(
       " ",
