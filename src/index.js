@@ -1,3 +1,5 @@
+import "./debug.css";
+
 export function createDebug({
   enabled = false,
   classes = [],
@@ -9,7 +11,7 @@ export function createDebug({
   const debugPanel = document.createElement("div");
   debugPanel.id = "debug-panel";
   debugPanel.classList.add("debug-panel", ...classes);
-  debugPanel.innerHTML = `<title class="debug-panel__title">Debug</title>`;
+  debugPanel.innerHTML = `<h2 class="debug-panel__title">Debug</h2>`;
   debugPanel.onclick = () => {
     debugPanel.classList.toggle(hiddenClass);
   };
