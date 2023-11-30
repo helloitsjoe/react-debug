@@ -23,7 +23,7 @@
   font-weight: bold;
 }
 
-.debug-panel--hidden {
+.debug-panel__hidden {
   height: 1rem;
   transition: height 0.2s ease-in-out;
 }
